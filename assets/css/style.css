@@ -1,0 +1,138 @@
+/* Styles for Ojas Soni Website & AI Prompt Library Book */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter+Tight:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(98% 0.005 85);
+  --foreground: oklch(22% 0.01 280);
+  --card: oklch(100% 0 0);
+  --card-foreground: oklch(22% 0.01 280);
+  --popover: oklch(100% 0 0);
+  --popover-foreground: oklch(22% 0.01 280);
+  --primary: oklch(62% 0.12 80);
+  --primary-foreground: oklch(98% 0.005 85);
+  --secondary: oklch(95% 0.01 85);
+  --secondary-foreground: oklch(22% 0.01 280);
+  --muted: oklch(95% 0.01 85);
+  --muted-foreground: oklch(55% 0.03 280);
+  --accent: oklch(95% 0.01 85);
+  --accent-foreground: oklch(22% 0.01 280);
+  --destructive: oklch(57.7% 0.245 27.325);
+  --destructive-foreground: oklch(98.4% 0.003 247.858);
+  --border: oklch(22% 0.01 280 / 0.08);
+  --input: oklch(22% 0.01 280 / 0.08);
+  --ring: oklch(62% 0.12 80);
+  
+  --brand: #ca6c2a;
+  --brand-light: #e07f3c;
+  --canvas: #faf9f5;
+  --ink: #2a292e;
+  
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Public Sans", "Inter Tight", system-ui, -apple-system, sans-serif;
+  
+  --shadow-page: 0 1px 3px rgba(0,0,0,0.05), 0 10px 30px -10px rgba(0,0,0,0.12);
+  --shadow-book: 0 20px 50px -12px rgba(0,0,0,0.4);
+}
+
+.dark {
+  --background: oklch(18% 0.015 280);
+  --foreground: oklch(95% 0.01 85);
+  --card: oklch(22% 0.02 280);
+  --card-foreground: oklch(95% 0.01 85);
+  --popover: oklch(22% 0.02 280);
+  --popover-foreground: oklch(95% 0.01 85);
+  --primary: oklch(70% 0.12 80);
+  --primary-foreground: oklch(18% 0.015 280);
+  --secondary: oklch(28% 0.02 280);
+  --secondary-foreground: oklch(95% 0.01 85);
+  --muted: oklch(28% 0.02 280);
+  --muted-foreground: oklch(70% 0.03 280);
+  --accent: oklch(28% 0.02 280);
+  --accent-foreground: oklch(95% 0.01 85);
+  --border: oklch(100% 0 0 / 0.08);
+  --input: oklch(100% 0 0 / 0.12);
+  --ring: oklch(70% 0.12 80);
+  --canvas: #18171c;
+  --ink: #f3f2ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-brand {
+  color: var(--brand);
+}
+
+.bg-brand {
+  background-color: var(--brand);
+}
+
+.bg-brand\/10 {
+  background-color: rgba(202, 108, 42, 0.1);
+}
+
+.border-brand {
+  border-color: var(--brand);
+}
+
+.bg-canvas {
+  background-color: var(--canvas);
+}
+
+.text-ink {
+  color: var(--ink);
+}
+
+.book-page {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-page);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-page:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 32px -8px rgba(0,0,0,0.12);
+}
+
+/* Toast animation */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-toast {
+  animation: toastIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
