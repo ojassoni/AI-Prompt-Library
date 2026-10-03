@@ -7,8 +7,11 @@ import { renderBookshelf } from './bookshelf.js';
 import { renderPromptLibrary, initPromptLibraryEvents } from './promptLibrary.js';
 
 function getRoute() {
-  const path = window.location.pathname.replace(/\/$/, '') || '/';
-  return path;
+  const path = window.location.pathname;
+  if (path.includes('/about')) return '/about';
+  if (path.includes('/prompt-library')) return '/prompt-library';
+  if (path.includes('/book')) return '/book';
+  return '/';
 }
 
 function updatePageTitle(path) {
@@ -81,7 +84,10 @@ function renderApp() {
 }
 
 function navigateTo(url) {
-  window.history.pushState(null, null, url);
+  // Build relative or base path for history
+  const base = window.location.pathname.startsWith('/AI-Prompt-Library') ? '/AI-Prompt-Library' : '';
+  const targetUrl = url === '/' ? (base || '/') : (base + url);
+  window.history.pushState(null, null, targetUrl);
   renderApp();
 }
 
@@ -89,8 +95,8 @@ function navigateTo(url) {
 document.addEventListener('click', (e) => {
   const link = e.target.closest('a[data-link]');
   if (link) {
-    const href = link.getAttribute('href');
-    if (href && href.startsWith('/')) {
+    const href = link.getAttribute('data-link') || link.getAttribute('href');
+    if (href) {
       e.preventDefault();
       navigateTo(href);
     }
@@ -106,3 +112,8 @@ window.addEventListener('popstate', () => {
 document.addEventListener('DOMContentLoaded', () => {
   renderApp();
 });
+
+// Immediate render if DOM already loaded
+if (document.readyState === 'interactive' || document.readyState === 'complete') {
+  renderApp();
+}

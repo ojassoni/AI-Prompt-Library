@@ -1,5 +1,5 @@
 // Navigation Bar Component (About and Books ONLY)
-export function renderNavbar(currentPath, navigate) {
+export function renderNavbar(currentPath) {
   const isBookView = currentPath === '/prompt-library';
   if (isBookView) return ''; // Prompt library uses its own header bar
 
@@ -7,7 +7,7 @@ export function renderNavbar(currentPath, navigate) {
     <nav class="sticky top-0 z-50 border-b border-black/5 bg-[#faf9f5]/80 backdrop-blur-md transition-colors">
       <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <a href="/" data-link="/" class="flex items-center gap-3 transition-opacity hover:opacity-80">
-          <img src="/assets/images/ojas-logo.png" alt="Ojas Soni Logo" class="h-8 w-auto object-contain" />
+          <img src="./assets/images/ojas-logo.png" alt="Ojas Soni Logo" class="h-8 w-auto object-contain" />
         </a>
         
         <!-- Desktop Nav Links -->
