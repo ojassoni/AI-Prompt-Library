@@ -1,9 +1,13 @@
 // Home Page View
+import { getAssetUrl } from './utils.js';
+
 export function renderHome() {
+  const logoUrl = getAssetUrl('assets/images/ojas-logo.png');
+
   return `
     <section class="flex flex-col items-center px-6 py-24 text-center md:py-32">
       <div class="mx-auto max-w-4xl">
-        <img src="./assets/images/ojas-logo.png" alt="Ojas Soni" class="mx-auto mb-12 h-24 w-auto object-contain opacity-95" />
+        <img src="${logoUrl}" alt="Ojas Soni" class="mx-auto mb-12 h-24 w-auto object-contain opacity-95" />
         
         <h1 class="font-serif text-4xl font-normal leading-tight text-balance md:text-6xl text-[#2a292e]">
           Curiosity turned into <span class="italic text-[#ca6c2a]">meaningful impact</span>.

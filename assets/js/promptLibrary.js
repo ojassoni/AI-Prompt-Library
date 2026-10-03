@@ -1,11 +1,14 @@
 // Interactive AI Prompt Library Book View
 import { promptSections } from './promptsData.js';
+import { getAssetUrl } from './utils.js';
 
 let activeSectionFilter = 'all'; // 'all' or section number 1..5
 let searchQuery = '';
 let activeToastTimeout = null;
 
 export function renderPromptLibrary() {
+  const coverUrl = getAssetUrl('assets/images/cover.jpg');
+
   return `
     <div class="min-h-screen bg-[#faf9f5] text-[#2a292e] relative">
       
@@ -74,7 +77,7 @@ export function renderPromptLibrary() {
         <!-- Book Banner Header -->
         <div class="mb-12 rounded-3xl bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 p-8 text-white shadow-xl md:p-12">
           <div class="flex flex-col items-center gap-8 md:flex-row">
-            <img src="./assets/images/cover.jpg" alt="Cover" class="w-36 -rotate-2 rounded shadow-2xl ring-1 ring-white/20 md:w-44" />
+            <img src="${coverUrl}" alt="Cover" class="w-36 -rotate-2 rounded shadow-2xl ring-1 ring-white/20 md:w-44" />
             <div>
               <span class="text-xs font-semibold tracking-widest text-[#ca6c2a] uppercase">OFFICIAL AI STUDY GUIDE</span>
               <h1 class="mt-2 font-serif text-3xl font-semibold sm:text-4xl text-white">101 Advanced AI Prompts for Students</h1>

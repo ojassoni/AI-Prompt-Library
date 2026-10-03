@@ -1,12 +1,16 @@
 // About Page View
+import { getAssetUrl } from './utils.js';
+
 export function renderAbout() {
+  const portraitUrl = getAssetUrl('assets/images/ojas-portrait.jpg');
+
   return `
     <section class="border-t border-b border-black/5 bg-[#f3f1eb]/50 py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-6">
         <div class="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <!-- Portrait Image Container -->
           <div class="relative mx-auto max-w-md md:max-w-none">
-            <img src="./assets/images/ojas-portrait.jpg" alt="Ojas Soni" class="aspect-[4/5] w-full rounded-2xl object-cover shadow-xl ring-1 ring-black/5" width="1080" height="1350" />
+            <img src="${portraitUrl}" alt="Ojas Soni" class="aspect-[4/5] w-full rounded-2xl object-cover shadow-xl ring-1 ring-black/5" width="1080" height="1350" />
             <div class="absolute -bottom-6 -right-6 -z-10 h-36 w-36 rounded-full bg-[#ca6c2a]/15 blur-3xl"></div>
           </div>
 

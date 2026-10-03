@@ -1,5 +1,9 @@
 // Bookshelf Page View
+import { getAssetUrl } from './utils.js';
+
 export function renderBookshelf() {
+  const coverUrl = getAssetUrl('assets/images/cover.jpg');
+
   return `
     <section class="py-20 md:py-28">
       <div class="mx-auto max-w-6xl px-6">
@@ -7,7 +11,7 @@ export function renderBookshelf() {
           
           <!-- Book Cover Image -->
           <div class="flex w-full justify-center md:w-1/3">
-            <img src="./assets/images/cover.jpg" alt="AI Prompt Library book cover by Ojas Soni" class="w-64 -rotate-2 transform rounded-lg shadow-2xl ring-1 ring-white/15 transition-transform hover:rotate-0 duration-300" />
+            <img src="${coverUrl}" alt="AI Prompt Library book cover by Ojas Soni" class="w-64 -rotate-2 transform rounded-lg shadow-2xl ring-1 ring-white/15 transition-transform hover:rotate-0 duration-300" />
           </div>
 
           <!-- Book Details -->
